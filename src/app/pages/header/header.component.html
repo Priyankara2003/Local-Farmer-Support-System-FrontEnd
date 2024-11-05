@@ -16,8 +16,24 @@
 
         <div class="d-flex justify-content-center align-items-center ms-auto">
             <i class="bx bx-cart mx-5 fs-3"></i>
-            <button type="button" class="btn btn-outline-light me-2 btnLogin" routerLink="/login">Login</button>
-            <button type="button" class="btn btn-warning btnSignUp" routerLink="/register">Sign-up</button>
+            <div *ngIf="isLoggedIn; else loggedOut">
+                <div class="flex-shrink-0 dropdown">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="assets/img/avatar.png" alt="mdo" width="32" height="32" class="rounded-circle border-2">
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                      <li><a class="dropdown-item" href="#" routerLink="/add-product">List Products</a></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" (click)="onLogOut()">Sign out</a></li>
+                    </ul>
+                  </div>
+                
+            </div>
+            <ng-template #loggedOut>
+                <button type="button" class="btn btn-outline-light me-2 btnLogin" routerLink="/login">Login</button>
+                <button type="button" class="btn btn-warning btnSignUp" routerLink="/register">Sign-up</button>
+            </ng-template>
         </div>
     </div>
 </header>

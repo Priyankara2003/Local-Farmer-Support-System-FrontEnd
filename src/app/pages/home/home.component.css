@@ -1,0 +1,63 @@
+.c1{
+    height: 84vh;
+    background-color: #E0E0E0;
+}
+
+.bg-1{
+    overflow: hidden;
+    width: 80%;
+    position: relative;
+    left: -9%;
+    top: -20%;
+    rotate: 12deg;
+    opacity: 80%;
+}
+
+.carousel-caption{
+    bottom: 14%;
+}
+
+.carousel-caption h1{
+    font-family: Lora;
+    color: #3E2723;
+    font-weight: 600;
+    line-height: 90px;
+    font-size: 66px;
+}
+
+.carousel-caption p{
+    font-family: Lora;
+    color: #3E2723;
+    font-weight: 600;
+    line-height: auto;
+    font-size: 17px;
+    opacity: 80%;
+}
+
+.bg-2{
+    overflow: hidden;
+    width: 70%;
+    position: relative;
+    left: -3%;
+    opacity: 70%;
+}
+
+.bg-3{
+    overflow: hidden;
+    width: 20%;
+    position: absolute;
+    top: -5%;
+    right: -7%;
+    opacity: 80%;
+    rotate: 200deg;
+}
+
+.bg-4{
+    overflow: hidden;
+    width: 15%;
+    position: absolute;
+    top: -7%;
+    left: -4%;
+    opacity: 80%;
+    rotate: 20deg;
+}

@@ -1,0 +1,94 @@
+<div class="container1 d-flex justify-content-center align-items-center vh-100 ">
+    <img src="assets/img/fruits-2.png" alt="" class="bg-1">
+    <img src="assets/img/pomagranate.png" alt="" class="bg-2">
+    <img src="assets/img/vege-water.png" alt="" class="bg-3">
+    <img src="assets/img/baerry.png" alt="" class="bg-4">
+    <img src="assets/img/Strawberry.png" alt="" class="bg-5">
+
+    <div class="pt-5 form">
+        <h1 class="fw-bold text-center">Add Product</h1>
+        <div class="row mb-3 mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="first">Product Name</label>
+                    <input type="text" class="form-control  mt-2" placeholder="Name of Product" id="first" [(ngModel)]="product.productName">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="last">Description</label>
+                    <input type="text" class="form-control  mt-2" placeholder="Description" id="last" [(ngModel)]="product.description">
+                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+
+        <div class="row mb-3 mt-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="nic">Quantiy On Hand(Kg)</label>
+                    <input type="text" class="form-control  mt-2" placeholder="Qty In Stock" id="nic" required="cvf" [(ngModel)]="product.qty">
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="cars" class="mt-4 mx-3">Category :-</label>
+
+                        <select id="category"  [(ngModel)]="product.category">
+                            <option value="Spices">Spices</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Organic">Organic</option>
+                            <option value="Fruits">Fruits</option>
+                            <option value="Other">Other</option>
+                        </select>
+                </div>
+            </div>
+            <!--  col-md-6   -->
+        </div>
+
+        <div class="row mb-3 mt-3">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="email">Price (Per/Kg)</label>
+                    <input type="text" class="form-control  mt-2" id="email" placeholder="Price" [(ngModel)]="product.price">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="pro-pic">Profile Image</label>
+                    <input type="file" class="form-control  mt-2" id="pro-pic" placeholder="url" [(ngModel)]="image" (change)="onFileSelected($event)">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-md-12">
+                <label for="gender">Status</label>
+                <div class="radio-div d-flex gap-5">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gender" id="gender" value="available" class="me-2" checked [(ngModel)]="product.status">Available
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="gender" id="gender" value="not available" class="me-2" checked [(ngModel)]="product.status">Not Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <button type="submit" class="btn btn-primary mb-3 mt-3 p-2" (click)="addProduct()">Add Product</button>
+        </div>
+        
+    </div>
+</div>
