@@ -1,3 +1,7 @@
+h3{
+    font-family: Roboto;
+}
+
 .c1{
     height: 84vh;
     background-color: #E0E0E0;
@@ -60,4 +64,58 @@
     left: -4%;
     opacity: 80%;
     rotate: 20deg;
+}
+
+.title button{
+    background-color: #8B5A2B;
+    border: transparent;
+}
+
+.card{
+    background-color: #EDFFEE;
+    transition-duration: 0.9s;
+}
+
+.card:hover{
+    transition-duration: 0.9s;
+    scale: 1.05;
+}
+
+.list-group{
+    list-style: none;
+}
+
+.item-card{
+    display: grid;
+    grid-template-columns: repeat(5,1fr) !important;
+}
+
+.title button{
+    background-color: #8B5A2B;
+    color: #fff;
+    font-weight: 600;
+    font-family: Roboto;
+    border-color: transparent;
+    box-shadow: #6f4822 2px 2px 2px;
+}
+
+
+/* contact us styles */
+
+.mr{
+    margin-top: 10px !important;
+}
+
+.name{
+    margin-top: 35px !important;
+}
+
+.form-bg{
+    border-radius: 15px !important;
+    background-color: #dafedc;
+    backdrop-filter: blur(15px) !important;
+}
+
+.bg-light{
+    background-color: #E0E0E0 !important;
 }

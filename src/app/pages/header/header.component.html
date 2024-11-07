@@ -15,7 +15,7 @@
         </form>
 
         <div class="d-flex justify-content-center align-items-center ms-auto">
-            <i class="bx bx-cart mx-5 fs-3"></i>
+            <i class="bx bx-cart mx-4 fs-3"></i>
             <div *ngIf="isLoggedIn; else loggedOut">
                 <div class="flex-shrink-0 dropdown">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,7 +31,7 @@
                 
             </div>
             <ng-template #loggedOut>
-                <button type="button" class="btn btn-outline-light me-2 btnLogin" routerLink="/login">Login</button>
+                <button type="button" class="btn btn-outline-light me-4 btnLogin" routerLink="/login">Login</button>
                 <button type="button" class="btn btn-warning btnSignUp" routerLink="/register">Sign-up</button>
             </ng-template>
         </div>

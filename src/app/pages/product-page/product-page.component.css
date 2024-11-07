@@ -1,0 +1,42 @@
+.image-view {
+    height: 70vh;
+    width: 50vw;
+    overflow: hidden;
+}
+
+.left-side {
+    height: 83vh;
+}
+
+.image-view img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    background-color: #edffee;
+}
+
+.details {
+    width: 50vw;
+    height: 70vh;
+    border: 2px solid #8b5a2b;
+}
+
+.buttons button {
+    background-color: #8b5a2b;
+    color: #fff;
+    font-weight: 600;
+    font-family: Roboto;
+    border-color: transparent;
+    box-shadow: #6f4822 2px 2px 2px;
+    height: 5vh;
+}
+
+.buttons button:hover {
+    background-color: #ffd54f;
+    color: #3e2723;
+    border-color: transparent;
+}
+
+.status{
+    text-transform: capitalize;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-7 left-side d-flex justify-content-center align-items-center" >
+            <div class="image-view">
+                <img src="data:image/jpeg;base64,{{product['imgData']}}" alt="">
+            </div>
+        </div>
+        <div class="col col-lg-5 d-flex justify-content-center align-items-center">
+            <div class="details p-4 d-grid justify-content-between">
+                <h3 class="fw-bold">{{product['productName']}}</h3>
+                <h5 class="text-success"><i class="bx bx-coin-stack">Rs.{{product['price']}}/per Kg</i></h5>
+                <h6>{{product['qty']}}/Kg in Stock</h6>
+                <h6>{{product['category']}}</h6>
+                <h6>Available from {{product['date']}}</h6>
+                <h6 class="text-warning status">{{product['status']}}</h6>
+                <h5 class="fw-semibold">Description</h5>
+                <h6>{{product['description']}}</h6>
+                <div class="buttons d-flex justify-content-center align-items-center">
+                    <button class="btn btn-primary cart mt-3">Add To Cart</button>
+                    <button class="btn btn-primary cart mt-3 ms-5">Call Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
