@@ -1,0 +1,169 @@
+<div class="container">
+    <div class="title">
+        <h2 class="mt-3 fw-semibold">Profile</h2>
+    </div>
+    <div class="profile-info mt-4 d-flex gap-5 align-items-center">
+        <div class="info">
+            <h5>{{seller.name}}</h5>
+            <h6 class="opacity-75">{{seller.email}}</h6>
+            <h6 class="opacity-75">{{seller.phone}}</h6>
+        </div>
+        <div class="actions d-grid gap-3">
+            <button class="btn btn-success">Update</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+    <div class="functions-tab">
+        <div class="tabs">
+            <ul class="nav nav-pills flex-row mt-4 justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active fw-semibold" id="pills-all-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all"
+                        aria-selected="true">Listed Items</button>
+                </li>
+                <li class="nav-item fw-semibold" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Orders</button>
+                </li>
+                <li class="nav-item fw-semibold" role="presentation">
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                        aria-selected="false">Order History</button>
+                </li>
+            </ul>
+            <!-- listed Items -->
+            <div class="tab-content mt-3" id="pills-tabContent">
+                <div class="tab-pane fade show active d-grid justify-content-center" id="pills-all" role="tabpanel"
+                    aria-labelledby="pills-all-tab" tabindex="0">
+                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    <div class="listed-item" *ngFor="let product of productList">
+                        <div class="row row-item d-flex justify-content-center align-items-center">
+                            <div class="col col-lg-1 image-box">
+                                <img src="data:image/jpeg;base64,{{product['imgData']}}" alt="">
+                            </div>
+                            <div class="col col-lg-1 name text-center fw-semibold">{{product['productName']}}</div>
+                            <div class="col col-lg-2 price text-center fw-semibold"> {{product['price']}}/Per Kg</div>
+                            <div class="col col-lg-2 stock text-center fw-semibold"> {{product['qty']}} Kg in Stock
+                            </div>
+                            <div class="col col-lg-1 category text-center fw-semibold"> {{product['category']}}</div>
+                            <div class="col col-lg-2 status text-center fw-semibold text-capitalize">
+                                {{product['date']}}</div>
+                            <div class="col col-lg-2 functions text-center fw-semibold">
+                                <i class="bx bxs-message-square-edit avatar me-lg-5" role="button"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="[addDetails(product)]"></i>
+                                <i class="bx bxs-trash avatar" role="button" (click)="delete(product['productId'])"></i>
+                            </div>
+                        </div>
+                        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                    </div>
+                </div>
+                <!-- orders -->
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">br</div>
+                <!-- order history -->
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">.tr</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <div class="pt-5 form">
+                <h1 class="fw-bold text-center">Add Product</h1>
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="first">Product Name</label>
+                            <input type="text" class="form-control  mt-2" placeholder="Name of Product" id="first" [(ngModel)]="product.productName">
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="last">Description</label>
+                            <input type="text" class="form-control  mt-2" placeholder="Description" id="last" [(ngModel)]="product.description">
+                        </div>
+                    </div>
+                    <!--  col-md-6   -->
+                </div>
+        
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nic">Quantiy On Hand(Kg)</label>
+                            <input type="text" class="form-control  mt-2" placeholder="Qty In Stock" id="nic" required="cvf" [(ngModel)]="product.qty">
+                        </div>
+        
+                    </div>
+        
+                    <div class="col-md-6">
+        
+                        <div class="form-group">
+                            <label for="cars" class="mt-4 mx-3">Category :-</label>
+        
+                                <select id="category"  [(ngModel)]="product.category">
+                                    <option value="Spices">Spices</option>
+                                    <option value="Vegetables">Vegetables</option>
+                                    <option value="Organic">Organic</option>
+                                    <option value="Fruits">Fruits</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                        </div>
+                    </div>
+                    <!--  col-md-6   -->
+                </div>
+        
+                <div class="row mb-3 mt-3">
+                    <div class="col-md-6">
+        
+                        <div class="form-group">
+                            <label for="email">Price (Per/Kg)</label>
+                            <input type="text" class="form-control  mt-2" id="email" placeholder="Price" [(ngModel)]="product.price">
+                        </div>
+                    </div>
+        
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="pro-pic">Profile Image</label>
+                            <input type="file" class="form-control  mt-2" id="pro-pic" placeholder="url" [(ngModel)]="image">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <label for="gender">Status</label>
+                        <div class="radio-div d-flex gap-5">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="gender" value="available" class="me-2" checked [(ngModel)]="product.status">Available
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="gender" id="gender" value="not available" class="me-2" checked [(ngModel)]="product.status">Not Available
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <p>If You want to update photo Please select image. If you didn't want to update please do not select new file.</p>
+                    </div>
+                </div>
+        
+                <div class="d-flex justify-content-center align-items-center">
+                    <button type="submit" class="btn btn-primary mb-3 mt-3 p-2" (click)="updateProduct()">Update Product</button>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

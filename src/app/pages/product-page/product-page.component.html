@@ -15,8 +15,11 @@
                 <h6 class="text-warning status">{{product['status']}}</h6>
                 <h5 class="fw-semibold">Description</h5>
                 <h6>{{product['description']}}</h6>
+                <div>
+                    <input type="text" name="qty" id="qty" placeholder="hh" [(ngModel)]="qty" style="width: 60px;">
+                </div>
                 <div class="buttons d-flex justify-content-center align-items-center">
-                    <button class="btn btn-primary cart mt-3">Add To Cart</button>
+                    <button class="btn btn-primary cart mt-3" (click)="addToCart(product)">Add To Cart</button>
                     <button class="btn btn-primary cart mt-3 ms-5">Call Now</button>
                 </div>
             </div>

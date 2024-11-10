@@ -55,7 +55,8 @@ export class LoginComponent {
             emailLogin: '',
             passwordLogin: ''
           })
-          localStorage.setItem("loggedUser",JSON.stringify(data));
+          sessionStorage.setItem("loggedUser",JSON.stringify(data));
+          sessionStorage.setItem("userRole",JSON.stringify("seller"));
           console.log(data);
         }
       })
@@ -85,6 +86,8 @@ export class LoginComponent {
               passwordLogin: ''
             })
             console.log(data);
+            sessionStorage.setItem("loggedUser",JSON.stringify(data));
+            sessionStorage.setItem("userRole",JSON.stringify("buyer"));
           }
         })
   }

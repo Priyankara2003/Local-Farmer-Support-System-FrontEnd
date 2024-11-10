@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="title">
+        <h2 class="fw-semibold fs-2 m-3">Cart</h2>
+    </div>
+    <div class="cart-items">
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+        <div class="container listed-item" *ngFor="let cartItem of cart">
+            <div class="row d-flex align-items-center">
+                <div class="col col-lg-1 image-box">
+                    <img src="data:image/jpeg;base64,{{cartItem['product']['imgData']}}" alt="">
+                </div>
+                <div class="col col-lg-1 name text-center fw-semibold">{{cartItem['product']['productName']}}</div>
+                <div class="col col-lg-1 price text-center fw-semibold">{{cartItem['product']['price']}}/Per Kg</div>
+                <div class="col col-lg-1 getQty text-center fw-semibold ms-5">{{cartItem['qty']}}/Kg in Cart</div>
+                <div class="col col-lg-2 stock text-center fw-semibold">{{cartItem['product']['qty']}} Kg in Stock</div>
+                <div class="col col-lg-1 qty">
+                    <input type="text" name="qty" id="" [(ngModel)]="qty">
+                    <i class="bx bx-plus-circle ms-2 avatar" role="button" (click)="updateQty(cartItem)"></i>
+                </div>
+                <div class="col col-lg-1 total text-center fw-semibold"> Rs.{{cartItem['total']}}</div>
+                <div class="col col-lg-1 status text-center fw-semibold text-capitalize">{{cartItem['product']['status']}}</div>
+                <div class="col col-lg-2 functions fw-semibold d-flex justify-content-center">
+                    <i class="bx bxs-trash avatar" role="button" (click)="deleteItem(cartItem)"></i>
+                </div>
+            </div>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+            
+        </div>
+        <h4 class="text-end fw-semibold mt-2  fs-5">Total :- Rs.{{netTotal1}}</h4>
+            <div class=" d-flex justify-content-end mt-3">
+                <button class="btn btn-success fw-semibold" (click)="placeOrder()">Place Order</button>
+            </div>
+    </div>
+</div>
